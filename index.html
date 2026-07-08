@@ -267,10 +267,14 @@
             margin-bottom: 3px; }
   .feat span:not(.ico) { font-size: 11.5px; color: var(--dim); line-height: 1.5; }
 
-  .twoUp { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 34px; padding-bottom: 10px; }
-  .big { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px 26px; }
-  .big h3 { margin: 0 0 16px; font-size: 17px; }
-  .li { display: flex; gap: 13px; margin-bottom: 16px; }
+  .twoUp { display: grid; grid-template-columns: 1fr; gap: 16px; padding-top: 34px; padding-bottom: 10px; }
+  /* full-width strips: heading, then the three items side by side */
+  .big { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+         padding: 22px 26px; display: grid; grid-template-columns: repeat(3, 1fr);
+         gap: 20px; }
+  .big h3 { grid-column: 1 / -1; margin: 0 0 2px; font-size: 17px; }
+  .li { display: flex; gap: 13px; margin-bottom: 0; }
+  @media (max-width: 860px) { .big { grid-template-columns: 1fr; } .li { margin-bottom: 4px; } }
   .li svg { flex: none; margin-top: 2px; }
   .li b { display: block; font-size: 13.5px; margin-bottom: 2px; }
   .li span { font-size: 12.5px; color: var(--dim); }
