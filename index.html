@@ -375,6 +375,7 @@
       <div class="install">
         <div class="lbl">Install with Homebrew</div>
         <div class="cmd" id="brew">brew tap fr1j0/hive-light
+brew trust fr1j0/hive-light
 brew install --cask hive-light<button class="copy" onclick="copyBrew(this)" aria-label="Copy install command">copy</button></div>
         <div class="fine">macOS 13+ · Apple Silicon &amp; Intel</div>
       </div>
@@ -720,7 +721,7 @@ function showUsage(open) {
 }
 
 function copyBrew(btn) {
-  const text = "brew tap fr1j0/hive-light\nbrew install --cask hive-light";
+  const text = "brew tap fr1j0/hive-light\nbrew trust fr1j0/hive-light\nbrew install --cask hive-light";
   navigator.clipboard.writeText(text).then(() => {
     btn.textContent = "copied";
     setTimeout(() => { btn.textContent = "copy"; }, 1600);
