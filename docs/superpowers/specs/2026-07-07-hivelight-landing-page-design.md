@@ -9,8 +9,7 @@ A single, polished marketing page at **hivelight.app** that serves as the canoni
 link for promoting Hive Light. It must read as a real product to non-engineers
 while giving engineers an immediate path to the source and the install command.
 
-The GitHub repo remains the link for Show HN; this page is the canonical link for
-Reddit, X, Product Hunt, the repo README, and anywhere else.
+This page is the canonical link for promoting the app.
 
 ## Audience
 
