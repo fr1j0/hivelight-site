@@ -243,7 +243,9 @@
   .notif .when { margin-left: auto; flex: none; font-size: 10px; color: var(--dim);
                  line-height: 1.6; }
   .hivemap { padding-top: 8px; }
-  .hivemap svg { display: block; max-width: 100%; height: auto; }
+  .hivemap .anat { display: block; max-width: 100%; height: auto;
+    -webkit-mask-image: radial-gradient(ellipse 96% 96% at 50% 50%, #000 62%, transparent 99%);
+    mask-image: radial-gradient(ellipse 96% 96% at 50% 50%, #000 62%, transparent 99%); }
   .staterow span { font-size: 11.5px; color: var(--dim); display: block; }
   @media (max-width: 860px) { .defnGrid { grid-template-columns: 1fr; } .states { max-width: 340px; } }
 
@@ -618,32 +620,7 @@ brew install --cask hive-light<button class="copy" onclick="copyBrew(this)" aria
   </div>
 
   <aside class="sidecol hivemap" role="img" aria-label="Hive anatomy: projects as cells, sessions within them, subagents fanning out">
-    <svg viewBox="0 0 280 250" width="280" height="250">
-      <g fill="none" stroke="#F5A623" stroke-opacity=".45" stroke-width="1.4">
-        <path d="M150 50 l60 35 v70 l-60 35 -60 -35 v-70 z" filter="url(#blur3)"/>
-        <path d="M150 50 l60 35 v70 l-60 35 -60 -35 v-70 z"/>
-        <path d="M270 120 l60 35 v70 l-60 35 -60 -35 v-70 z" stroke-opacity=".22"/>
-        <path d="M30 120 l60 35 v70 l-60 35 -60 -35 v-70 z" stroke-opacity=".22"/>
-      </g>
-      <circle cx="128" cy="105" r="7" fill="#34C759" filter="url(#blur3)"/>
-      <circle cx="128" cy="105" r="7" fill="#34C759"/>
-      <circle cx="166" cy="145" r="7" fill="#FF9500" filter="url(#blur3)"/>
-      <circle cx="166" cy="145" r="7" fill="#FF9500"/>
-      <g stroke="#F5A623" stroke-opacity=".5" stroke-dasharray="2 3" stroke-width="1">
-        <path d="M172 150 L204 168"/><path d="M173 143 L212 148"/><path d="M170 152 L196 186"/>
-      </g>
-      <g fill="#E9C489" fill-opacity=".8">
-        <circle cx="208" cy="170" r="2.6"/><circle cx="216" cy="148" r="2.6"/><circle cx="199" cy="189" r="2.6"/>
-      </g>
-      <g font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#9A9CA1">
-        <text x="44" y="42">project</text>
-        <path d="M78 46 L96 62" stroke="#5A5C62" stroke-width="1" fill="none"/>
-        <text x="42" y="105">sessions</text>
-        <path d="M96 102 L117 104" stroke="#5A5C62" stroke-width="1" fill="none"/>
-        <text x="196" y="216">subagents</text>
-        <path d="M218 206 L206 194" stroke="#5A5C62" stroke-width="1" fill="none"/>
-      </g>
-    </svg>
+    <img class="anat" src="assets/hive-anatomy.png" width="793" height="628" alt="" loading="lazy">
   </aside>
   </div>
 </section>
