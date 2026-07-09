@@ -302,6 +302,35 @@
     .twoUp { grid-template-columns: 1fr; }
     nav .links { display: none; }
   }
+
+  /* ---------- mobile layer: fluid widths, stacked compositions ---------- */
+  @media (max-width: 860px) {
+    nav { justify-content: space-between; }
+    .hero { padding: 18px 0 36px; gap: 26px; }
+    .stage { width: 100%; max-width: 370px; margin: 0 auto; }
+    .menubar, .panel { width: 100%; max-width: 340px; min-width: 0;
+                       margin-left: auto; margin-right: auto; }
+    .heroCtas { flex-wrap: wrap; row-gap: 10px; }
+    .install { max-width: none; }
+    /* stacked column: the banner sits below the card, no overlap art */
+    .notif { margin: 10px 0 0; }
+    .defnGrid { gap: 26px; }
+    .hivemap { padding-top: 0; }
+    .hivemap svg { margin: 0 auto; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 18px; }
+    .sep { width: calc(100% - 36px); }
+    h1 { font-size: clamp(27px, 8.2vw, 38px); }
+    .tagline { font-size: 19px; }
+    .problem h2, .defn h2 { font-size: 21px; }
+    .secTitle { font-size: 21px; }
+    .entry li { font-size: 14px; }
+    footer { flex-direction: column; align-items: center; gap: 12px;
+             text-align: center; padding: 22px 0 34px; }
+    footer .mid { margin: 0; }
+    footer .btns { justify-content: center; }
+  }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
