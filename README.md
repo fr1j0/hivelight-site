@@ -15,5 +15,5 @@ site. For the app itself (where contributions are welcome), head to
 
 ## Rights
 
-Site content, the "Hive Light" name, logo, and icon are © loopwayz, all rights
-reserved — see the app repo's [TRADEMARK.md](https://github.com/fr1j0/hive-light/blob/main/TRADEMARK.md).
+Site content, the "Hive Light" name, logo, and icon are © Fernando Castillo, all
+rights reserved — see the app repo's [TRADEMARK.md](https://github.com/fr1j0/hive-light/blob/main/TRADEMARK.md).
