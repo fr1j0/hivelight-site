@@ -243,9 +243,18 @@
   .notif .when { margin-left: auto; flex: none; font-size: 10px; color: var(--dim);
                  line-height: 1.6; }
   .hivemap { padding-top: 8px; }
-  .hivemap .anat { display: block; max-width: 100%; height: auto;
-    -webkit-mask-image: radial-gradient(ellipse 96% 96% at 50% 50%, #000 62%, transparent 99%);
-    mask-image: radial-gradient(ellipse 96% 96% at 50% 50%, #000 62%, transparent 99%); }
+  /* screen-blend: the artwork's near-black ground adds ~nothing over the
+     page's void, so the rectangle boundary vanishes without masking */
+  .hivemap .anat { display: block; max-width: 100%; height: auto; border-radius: 44px;
+    mix-blend-mode: screen;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10px, #000 calc(100% - 10px), transparent),
+                        linear-gradient(to bottom, transparent, #000 10px, #000 calc(100% - 10px), transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent, #000 10px, #000 calc(100% - 10px), transparent),
+                linear-gradient(to bottom, transparent, #000 10px, #000 calc(100% - 10px), transparent);
+    mask-composite: intersect; }
+  .defn .defnGrid { grid-template-columns: 1fr 440px; }
+  @media (max-width: 1000px) { .defn .defnGrid { grid-template-columns: 1fr; } }
   .staterow span { font-size: 11.5px; color: var(--dim); display: block; }
   @media (max-width: 860px) { .defnGrid { grid-template-columns: 1fr; } .states { max-width: 340px; } }
 
@@ -620,7 +629,7 @@ brew install --cask hive-light<button class="copy" onclick="copyBrew(this)" aria
   </div>
 
   <aside class="sidecol hivemap" role="img" aria-label="Hive anatomy: projects as cells, sessions within them, subagents fanning out">
-    <img class="anat" src="assets/hive-anatomy.png" width="720" height="570" alt="" loading="lazy">
+    <img class="anat" src="assets/hive-anatomy.png" width="793" height="628" alt="" loading="lazy">
   </aside>
   </div>
 </section>
